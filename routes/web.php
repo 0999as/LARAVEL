@@ -76,8 +76,6 @@ Route::prefix('admin')->group(function () {
         return 'id';
     });
 });
-
-/*1*//*2*//*3*/
 /*
 Route::get('/users/{id}', [CategoryController::class, 'show']);
 */
