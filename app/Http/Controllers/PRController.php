@@ -78,4 +78,17 @@ class PRController extends Controller
         $str = '<b>text</b>';
         return view('PR.PR', compact('str'));
     }
+    public function PR14()
+    {
+        $age = '17';
+        return view('PR.PR', compact('age'));
+    }
+    public function PR18()
+    {
+        return view('PR.PR', ['arr' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+    }
+    public function PR19()
+    {
+        return view('PR.PR', ['arr' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+    }
 }

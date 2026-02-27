@@ -90,6 +90,26 @@
     <p>{{$year = date('Y')}}</p>
     @endif
     --}}
+    {{--
+    @if ($age > '18')
+        <p>Какой-то текст</p>
+    @elseif ($age == '18')
+        <p>Текст какой-то</p>
+    @else
+        <p>Текст</p>
+    @endif 
+    @unless ($age >= '18')
+       <p>Вы несовершеннолетний</p>
+    @endunless
+    --}}
+    {{--
+    @if (count($arr) > 0)
+        {{array_sum($arr)}}
+    @else
+        <p>Массив пустой</p>
+    @endif
+    --}}
+    
 </body>
 
 </html>

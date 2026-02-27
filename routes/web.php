@@ -80,4 +80,4 @@ Route::prefix('admin')->group(function () {
 Route::get('/users/{id}', [CategoryController::class, 'show']);
 */
 Route::get('/test1', [PostController::class, 'show']);
-Route::get('/PR', [PRController::class, 'PR12']);
+Route::get('/PR', [PRController::class, 'PR19']);
