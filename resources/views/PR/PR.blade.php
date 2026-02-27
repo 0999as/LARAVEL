@@ -109,7 +109,11 @@
         <p>Массив пустой</p>
     @endif
     --}}
-    
+    <ul>
+        @foreach ($arr as $element)
+            <li>{{$element}}</li>
+        @endforeach
+    </ul>
 </body>
 
 </html>
