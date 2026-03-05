@@ -109,9 +109,16 @@
         <p>Массив пустой</p>
     @endif
     --}}
+    {{--
     <ul>
         @foreach ($arr as $element)
             <li>{{$element}}</li>
+        @endforeach
+    </ul>
+    --}}
+    <ul>
+        @foreach($employees as $employeer)
+            <li>{{$employeer['name']}}{{$employeer['surname']}}{{$employeer['salary']}}</li>
         @endforeach
     </ul>
 </body>
