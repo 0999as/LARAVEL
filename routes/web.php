@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PRController;
