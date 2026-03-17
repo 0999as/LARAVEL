@@ -56,4 +56,36 @@ class PostController extends Controller
         $users = DB::table('users')->where('age', '=', 30)->orWhere(function($query){$query ->where('id', '>', 4);})->get();
         dump($users);
     }
+    public function show14() {
+        $users = DB::table('users')->where('age', '=', 30)->orWhere('id', '>', 4)->orWhere('salary', '=', 40000)->get();
+        dump($users);
+    }
+    public function show15() {
+        $users = DB::table('users')->where('salary', '=', 45000)->orWhere('age', '>=', 20)->where('age', '<=', 30)->get();
+        dump($users);
+    }
+    public function show16() {
+        $users = DB::table('users')->where('age', '>=', 20)->where('age', '<=', 30)->orWhereBetween('salary', [30000, 40000])->get();
+        dump($users);
+    }
+    public function show17() {
+        $users = DB::table('users')->where('id', '=', 3)->get();
+        dump($users);
+    }
+    public function show23() {
+        $users = DB::table('users')->whereBetween('age', [30, 40])->get();
+        dump($users);
+    }
+    public function show24() {
+        $users = DB::table('users')->whereNotBetween('age', [30, 40])->get();
+        dump($users);
+    }
+    public function show25() {
+        $users = DB::table('users')->whereIn('id', [1, 2, 3, 5])->get();
+        dump($users);
+    }
+    public function show26() {
+        $users = DB::table('users')->whereNotIn('id', [1, 2, 3, 5])->get();
+        dump($users);
+    }
 }

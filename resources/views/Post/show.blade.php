@@ -9,14 +9,8 @@
 </head>
 
 <body>
-    @foreach ($users as $user)
-		<div>
-			<h2>{{ $user->title }}</h2>
-			<div>
-				{{ $user->age }}
-			</div>
-		</div>
-	@endforeach
-
+    <p>Имя: {{$user->$name}}</p>
+    <p>Возраст: {{$user->$age}}</p>
+    <p>Email: {{$user->$email}}</p>
 </body>
 </html>
