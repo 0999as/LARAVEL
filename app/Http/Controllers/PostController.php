@@ -88,4 +88,44 @@ class PostController extends Controller
         $users = DB::table('users')->whereNotIn('id', [1, 2, 3, 5])->get();
         dump($users);
     }
+    public function show34() {
+        $users = DB::table('users')->oldest('created_at')->get();
+        dump($users);
+    }
+    public function show35() {
+        $users = DB::table('users')->latest('created_at')->get();
+        dump($users);
+    }
+    public function show36() {
+        $users = DB::table('users')->where('age', '>', 30)->oldest('created_at')->get();
+        dump($users);
+    }
+    public function show39() {
+        $users = DB::table('users')->inRandomOrder()->get();
+        dump($users);
+    }
+    public function show40() {
+        $users = DB::table('users')->inRandomOrder()->first();
+        dump($users);
+    }
+    public function show41() {
+        $users = DB::table('users')->whereBetween('age', [20,30])->inRandomOrder()->get();
+        dump($users);
+        $users = DB::table('users')->whereBetween('age', [20,30])->inRandomOrder()->first();
+        dump($users);
+    }
+    public function show42() {
+        $users = DB::table('users')->take(3)->get();
+        dump($users);
+    }
+    public function show43() {
+        $users = DB::table('users')->skip(3)->take(3)->get();
+        dump($users);
+    }
+    public function show50() {
+        $users = DB::table('users')->where('age', '>=', 30)->update(['salary'=>'46000']);
+    }
+    public function show51() {
+        $users = DB::table('users')->where('id', '=', 2)->update(['age'=>'24']);
+    }
 }
