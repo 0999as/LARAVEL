@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('posts1', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('desc');
+            $table->string('text');
+            $table->datetime('created_at');
+            $table->datetime('updated_at');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('posts1');
+    }
+};

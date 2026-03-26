@@ -16,43 +16,31 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('users')->insert([
+        DB::table('posts1')->insert([
             [
-			    'name' => 'John',
-			    'email' => 'John'.'@gmail.com',
-			    'age' => 20,
-			    'salary' => 30000,
-				
+                'title' => Str::random(10),
+                'desc' => Str::random(50),
+                'text' => Str::random(250),
             ],
             [
-			    'name' => 'Adam',
-			    'email' => 'Adam'.'@gmail.com',
-			    'age' => 25,
-			    'salary' => 35000,
+                'title' => Str::random(10),
+                'desc' => Str::random(50),
+                'text' => Str::random(250),
             ],
             [
-			    'name' => 'Tom',
-			    'email' => 'Tom'.'@gmail.com',
-			    'age' => 28,
-			    'salary' => 40000,
+                'title' => Str::random(10),
+                'desc' => Str::random(50),
+                'text' => Str::random(250),
             ],
             [
-			    'name' => 'Kris',
-			    'email' => 'Kris'.'@gmail.com',
-			    'age' => 30,
-			    'salary' => 45000,
+                'title' => Str::random(10),
+                'desc' => Str::random(50),
+                'text' => Str::random(250),
             ],
             [
-			    'name' => 'Sam',
-			    'email' => 'Sam'.'@gmail.com',
-			    'age' => 32,
-			    'salary' => 45000,
-            ],
-            [
-			    'name' => 'Oleg',
-			    'email' => 'Oleg'.'@gmail.com',
-			    'age' => 35,
-			    'salary' => 45000,
+                'title' => Str::random(10),
+                'desc' => Str::random(50),
+                'text' => Str::random(250),
             ],
         ]);
     }

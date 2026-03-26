@@ -5,6 +5,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PRController;
 
@@ -84,3 +85,4 @@ Route::get('/users/{id}', [CategoryController::class, 'show']);
 */
 Route::get('/LL', [PostController::class, 'show51']);
 Route::get('/PR', [PRController::class, 'PR12']);
+Route::get('/posts', [PostsController::class, 'index']);
