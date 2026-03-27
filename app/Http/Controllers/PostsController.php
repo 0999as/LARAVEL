@@ -8,7 +8,7 @@ class PostsController extends Controller
 {
   public function index()
   {
-    $posts = Posts::all();
+    $posts = Posts::findOrFail([1, 2]);
 
     return view('posts.index', compact('posts'));
   }
