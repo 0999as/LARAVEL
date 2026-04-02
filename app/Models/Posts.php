@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Posts extends Model
 {
     protected $table = 'posts1';
+
+    protected $fillable = ['title', 'desc', 'text'];
 }
