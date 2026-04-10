@@ -89,3 +89,5 @@ Route::get('/posts', [PostsController::class, 'index1']);
 
 Route::get('/posts/new', [PostsController::class, 'newPost'])->name('post.create');
 Route::post('/posts/new', [PostsController::class, 'newPost'])->name('post.store');
+
+Route::get('/save', [PostsController::class, 'save']);

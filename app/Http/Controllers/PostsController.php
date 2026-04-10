@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
@@ -14,17 +15,26 @@ class PostsController extends Controller
 
     return view('posts.index', compact('posts'));
   }
-  public function newPost(Request $reguest)
+  public function newPost(Request $request)
   {
-    if ($reguest->isMethod('post')) {
-      $validated = $reguest->validate([
-        'title' => 'requred|string|10',
-        'desc' => 'requred|string|50',
-        'text' => 'requared|string|250'
-      ]);
-      $posts = Posts::create($validated);
-      return redirect()->route('post.create')->with('success', 'Данные добавлны');
+    if ($request->isMethod('post')) {
+      //$validated = $request->validate([]);
+      //Posts::create($validated);
+      $post = new Posts();
+      $post->title = $request->title;
+      $post->desc = $request->desc;
+      $post->text = $request->text;
+      $post->save();
+      return redirect()->route('post.create')->with('success', 'Данные добавлены');
     }
-    return view('posts.view');
+    return view('posts.create');
+  }
+  public function save(){
+    $post = Posts::find(6);
+    $post->title = 'jfjf';
+    $post->save();    
+  }
+  public function editPost() {
+    return view('posts.editPost');
   }
 }

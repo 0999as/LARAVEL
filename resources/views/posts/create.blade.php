@@ -9,6 +9,24 @@
 </head>
 
 <body>
-    
+    @if(session('success'))
+        <div style="color: green;">{{ session('success') }}</div>
+    @endif
+
+    @if($errors->any())
+        <div style="color: red;">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+
+    <form method="POST" action="{{ route('post.store') }}">
+        @csrf
+        <input type="text" name="title" placeholder="Заголовок" value="{{ old('title') }}">
+        <textarea name="desc" placeholder="Краткое содержание">{{ old('desc') }}</textarea>
+        <textarea name="text" placeholder="Содержание">{{ old('text') }}</textarea>
+        <button type="submit">Сохранить</button>
+    </form>
 </body>
 </html>
