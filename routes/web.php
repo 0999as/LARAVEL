@@ -91,3 +91,8 @@ Route::get('/posts/new', [PostsController::class, 'newPost'])->name('post.create
 Route::post('/posts/new', [PostsController::class, 'newPost'])->name('post.store');
 
 Route::get('/save', [PostsController::class, 'save']);
+
+Route::match(['get', 'post'], '/post/edit/{id}', 'PostsController@editPost');
+
+Route::post('/posts/set-same-title', [PostsController::class, 'setSameTitle'])->name('posts.setSameTitle');
+?>

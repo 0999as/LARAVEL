@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Post;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
@@ -30,11 +31,24 @@ class PostsController extends Controller
     return view('posts.create');
   }
   public function save(){
-    $post = Posts::find(6);
+    $post = Posts::find(5);
     $post->title = 'jfjf';
     $post->save();    
   }
-  public function editPost() {
-    return view('posts.editPost');
+  public function editPost(Request $request, $id) {
+    $post = Post::find($id);
+    if ($request->has('submit')) {
+      $post->title = $request->title;
+      $post->desc = $request->desc;
+      $post->date = $request->date;
+      $post->text = $request->text;
+      $post->save();
+    }
+    return view('posts.editPost', ['post' => $post]);
+  }
+  public function setSameTitle(Request $request) {
+    Posts::query()->update(['title' => $request->title]);
+    return redirect()->route('posts.index')->with('success'. $request->title);
+    return view('posts.setSameTitle');
   }
 }
