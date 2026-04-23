@@ -83,7 +83,7 @@ Route::prefix('admin')->group(function () {
 /*
 Route::get('/users/{id}', [CategoryController::class, 'show']);
 */
-Route::get('/LL', [PostController::class, 'show51']);
+Route::get('/LL', [PostController::class, 'show15']);
 Route::get('/PR', [PRController::class, 'PR12']);
 Route::get('/posts', [PostsController::class, 'index1']);
 

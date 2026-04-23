@@ -16,31 +16,12 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('posts1')->insert([
+        DB::table('profiles')->insert([
             [
-                'title' => Str::random(10),
-                'desc' => Str::random(50),
-                'text' => Str::random(250),
-            ],
-            [
-                'title' => Str::random(10),
-                'desc' => Str::random(50),
-                'text' => Str::random(250),
-            ],
-            [
-                'title' => Str::random(10),
-                'desc' => Str::random(50),
-                'text' => Str::random(250),
-            ],
-            [
-                'title' => Str::random(10),
-                'desc' => Str::random(50),
-                'text' => Str::random(250),
-            ],
-            [
-                'title' => Str::random(10),
-                'desc' => Str::random(50),
-                'text' => Str::random(250),
+                'name' => Str::random(6),
+                'surname' => Str::random(8),
+                'email' => ('bot0@email.com'),
+                'user_id' => (1),
             ],
         ]);
     }
