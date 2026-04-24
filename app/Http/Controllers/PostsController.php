@@ -36,7 +36,7 @@ class PostsController extends Controller
     $post->save();    
   }
   public function editPost(Request $request, $id) {
-    $post = Post::find($id);
+    $post = Posts::find($id);
     if ($request->has('submit')) {
       $post->title = $request->title;
       $post->desc = $request->desc;
@@ -49,6 +49,5 @@ class PostsController extends Controller
   public function setSameTitle(Request $request) {
     Posts::query()->update(['title' => $request->title]);
     return redirect()->route('posts.index')->with('success'. $request->title);
-    return view('posts.setSameTitle');
   }
 }

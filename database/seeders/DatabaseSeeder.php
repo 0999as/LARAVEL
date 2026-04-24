@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => Str::random(6),
                 'surname' => Str::random(8),
-                'email' => ('bot0@email.com'),
-                'user_id' => (1),
+                'email' => ('bot9@email.com'),
+                'user_id' => (10),
             ],
         ]);
     }

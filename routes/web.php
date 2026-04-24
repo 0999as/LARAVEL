@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PRController;
+use App\Http\Controllers\HasController;
 
 /*1*/
 Route::get('/test', function () {
@@ -95,4 +96,6 @@ Route::get('/save', [PostsController::class, 'save']);
 Route::match(['get', 'post'], '/post/edit/{id}', 'PostsController@editPost');
 
 Route::post('/posts/set-same-title', [PostsController::class, 'setSameTitle'])->name('posts.setSameTitle');
+
+Route::get('/HO', [hasController::class, 'HO1']);
 ?>
