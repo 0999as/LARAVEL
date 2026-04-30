@@ -97,5 +97,5 @@ Route::match(['get', 'post'], '/post/edit/{id}', 'PostsController@editPost');
 
 Route::post('/posts/set-same-title', [PostsController::class, 'setSameTitle'])->name('posts.setSameTitle');
 
-Route::get('/HO', [hasController::class, 'HO1']);
+Route::get('/HO/{id}', [hasController::class, 'HO2']);
 ?>
