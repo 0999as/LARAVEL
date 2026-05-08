@@ -9,6 +9,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PRController;
 use App\Http\Controllers\HasController;
+use App\Http\Controllers\SaveController;
 
 /*1*/
 Route::get('/test', function () {
@@ -98,4 +99,7 @@ Route::match(['get', 'post'], '/post/edit/{id}', 'PostsController@editPost');
 Route::post('/posts/set-same-title', [PostsController::class, 'setSameTitle'])->name('posts.setSameTitle');
 
 Route::get('/HO/{id}', [hasController::class, 'HO2']);
+
+Route::get('/users/create', [SaveController::class, 'create'])->name('users.create');
+Route::post('/users', [SaveController::class, 'store'])->name('users.store');
 ?>

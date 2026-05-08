@@ -42,9 +42,9 @@ class PRController extends Controller
     {
         return view('PR.PR', [
             'worker' =>
-                [
-                    ['name' => 'Иван', 'age' => '25', 'salary' => '25000']
-                ]
+            [
+                ['name' => 'Иван', 'age' => '25', 'salary' => '25000']
+            ]
         ]);
     }
     public function PR8()
@@ -59,11 +59,11 @@ class PRController extends Controller
     {
         return view('PR.PR', [
             'location' =>
-                [
-                    ['country' => '', 'city' => 'Пенза'],
-                    ['country' => 'Россия', 'city' => ''],
-                    ['country' => 'Россия', 'city' => 'Омск']
-                ]
+            [
+                ['country' => '', 'city' => 'Пенза'],
+                ['country' => 'Россия', 'city' => ''],
+                ['country' => 'Россия', 'city' => 'Омск']
+            ]
         ]);
     }
     public function PR11()
