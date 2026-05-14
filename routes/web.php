@@ -10,8 +10,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PRController;
 use App\Http\Controllers\HasController;
 use App\Http\Controllers\SaveController;
+use App\Http\Controllers\TestController;
 
 /*1*/
+
 Route::get('/test', function () {
     return 'Тест';
 });
@@ -102,4 +104,6 @@ Route::get('/HO/{id}', [hasController::class, 'HO2']);
 
 Route::get('/users/create', [SaveController::class, 'create'])->name('users.create');
 Route::post('/users', [SaveController::class, 'store'])->name('users.store');
-?>
+
+Route::match(['get', 'post'], '/form', [TestController::class, 'form']);
+Route::match(['get', 'post'], '/test/result', [TestController::class, 'result']);
